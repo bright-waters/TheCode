@@ -1,0 +1,54 @@
+<mat-card class="width-card" *ngIf="!show">
+  <mat-card-title>
+    <b>List Of Subjects</b>
+  </mat-card-title>
+  <mat-card-content>
+    <p>Please select the subjects that you are currently registered for:</p>
+    <table>
+      <tr>
+        <td>
+          <b>Subject</b>
+        </td>
+        <td>
+          <b>Select Relevent Subjects</b>
+        </td>
+      </tr>
+
+      <tr *ngFor="let subject of subjects">
+        <td>{{subject.description}} </td>
+        <td>
+          <mat-checkbox (click)="onClick(subject)"></mat-checkbox>
+        </td>
+      </tr>
+    </table>
+
+
+    <button mat-raised-button (click)="setShow()" color="primary" class="grades">Proceed To Enter Grades</button>
+  </mat-card-content>
+</mat-card>
+
+
+
+<mat-card class="width-card" *ngIf="show">
+  <mat-card-title>
+    <b>Enter Grades Obtained</b>
+  </mat-card-title>
+  <mat-card-content>
+    <p>Enter Grades Obtained for the Courses that you selected</p>
+
+    <table>
+
+
+      <tr *ngFor="let subjectSelected of selectedSubjects">
+        <td>{{subjectSelected.description}} </td>
+        <td>
+          <mat-form-field class="name">
+            <input matInput type="text" [(ngModel)]="subjectSelected.mark" placeholder="Mark">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+    <button mat-raised-button (click)="checkForMark()" color="primary" class="grades"> Check for Courses that you qualify for </button>
+     {{markSuggestion}}
+  </mat-card-content>
+</mat-card>

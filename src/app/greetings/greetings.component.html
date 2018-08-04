@@ -1,0 +1,12 @@
+<mat-card class="width-card">
+  <mat-card-title> <b>Welcome to EduWise</b></mat-card-title>
+  <mat-card-content>
+    <p>We are excited to help you choose a perfect career for yourself.</p>
+    <mat-form-field class="name">
+      <input matInput type="text" [(ngModel)]="name" placeholder="Full Name"> 
+    </mat-form-field>
+
+    
+  <button  class="button-getStarted" (click)="goToMenuOnClick()" mat-raised-button color="primary">Get Started</button>
+  </mat-card-content>
+</mat-card>

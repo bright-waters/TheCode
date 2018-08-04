@@ -1,0 +1,18 @@
+.width-card{
+    width: 60%;
+    margin: 5%;
+}
+.name{
+    width: 60%;
+}
+
+.button-getStarted{
+    width: 60%
+}
+.checkbox{
+    align-content: center;
+}
+
+.grades{
+    margin: 2%;
+}
